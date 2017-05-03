@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Administration</h2>
+       <p>Load all kanji: <a href="/admin/load">Load</a></p>
+       <p>Delete all kanji: <a href="/admin/delete">Delete</a></p>
+       <p>
+           Sort by level: 
+           <a href="/admin/admin?level=1">1</a> 
+           | <a href="/admin/admin?level=2">2</a> 
+           | <a href="/admin/admin?level=3">3</a> 
+           | <a href="/admin/admin?level=4">4</a> 
+           | <a href="/admin/admin?level=5">5</a> 
+           | <a href="/admin/admin">All</a>
+           | <a href="/kanji/insert">Add new kanji</a>
+       </p>
+
+       <table class="admin">
+           <th>#</th>
+           <th>Kanji</th>
+           <th>Meaning</th>
+           <th>Strokes</th>
+           <th>JLPT level</th>
+           <th>Delete</th>
+           {% for kanji in kanjis %}
+                <tr>
+                    <td>
+                        {{forloop.counter}}
+                    </td>
+                    <td>
+                        <a href="/kanji/read?key={{kanji.key}}">{{kanji.kanji}}</a>
+                    </td>
+                    <td>
+                        {{kanji.meaning}}
+                    </td>
+                    <td>
+                        {{kanji.strokes}}      
+                    </td>
+                    <td>
+                        {{kanji.jlptLevel}}
+                    </td>
+                    <td>
+                        <a href="/kanji/delete?key={{kanji.key}}">X</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <p>
+            <a href="/">&larr; Back</a>
+        </p>
+{% endblock %}
+

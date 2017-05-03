@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<style type="text/css">
+
+div.admin {
+    margin-bottom: 10px;
+}
+
+</style>
+
+
+    <h2>Administration</h2>
+       <p>Loading new kanji...</p>
+
+       <div class="admin">
+           <ul>
+           {% for kanji in kanjis %}
+               <li>{{kanji}}</li>
+           {% endfor %}
+           </ul> 
+        </div>
+        <p>
+            <a href="/">&larr; Back</a>
+        </p>
+{% endblock %}
+

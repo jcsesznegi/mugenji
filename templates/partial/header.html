@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>mugenji: learn kanji socially</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        {% ifequal user.theme 'blue' %}
+            <link rel="stylesheet" type="text/css" href="/static/css/blue.css">
+        {% endifequal %}
+        {% ifequal user.theme 'red' %}
+            <link rel="stylesheet" type="text/css" href="/static/css/red.css">
+        {% endifequal %}
+       <link type="text/css" href="/static/css/ui-darkness/jquery-ui-1.8.5.custom.css" rel="Stylesheet" />   
+        <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="/static/js/jquery-ui-1.8.5.custom.min.js"></script>
+        <script type="text/javascript" src="/static/js/lib.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("button.cycleKanji").click(function(event){
+                    var $tabs = $('#tabs').tabs();
+                    var selected = $tabs.tabs('option', 'selected');
+                    var url = '/kanji/cards';
+                    if (selected > 0) {
+                        url = url + '?level=' + selected + '&offset=';
+                    } else {
+                        url = url + '?offset=';
+                    }
+                    // find and set the offset 
+                    var offset = parseInt($('#tabs').attr('offset'));
+                    var direction = $(this).attr('direction');
+                    if (direction == 'back') {
+                        offset = offset - 10;
+                    } else {
+                        offset = offset + 10;
+                    }
+                    if (offset < 0) offset = 0;
+                    $('#tabs').attr({offset:offset});
+                    url = url + offset;
+                    // set new URL for the tab
+                    $tabs.tabs("url", selected, url);
+                    // load the tab with new url string
+                    $tabs.tabs("load", selected);
+                });
+                // load user stats on main page
+                $("#content_sub").load("/user/stats");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header">
+            <div class="logo">
+               <a href="/"><img class="logo" src="/static/images/logo.gif"/></a>
+            </div>
+            <div class="greeting">
+                {{greeting}}
+            </div>
+            <div class="navigation">
+                 <a href="/stats">Statistics</a> {% if isLoggedIn %} | <a href="/settings">My Settings</a>  {% endif %} {% if isAdmin %} | <a href="/admin/admin">Administration</a> {% endif %}
+            </div>
+        </div>
+        <div class="content">
+
+
+
+

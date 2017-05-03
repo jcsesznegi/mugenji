@@ -1,0 +1,17 @@
+<div class="user_stats">
+     <h2>Your Statistics</h2>
+{% if isLoggedIn %}
+     <table class="user_stats">
+         <tr><th colspan="3">Completion %</th></tr>
+         <tr><td>Level 1:</td><td>{{totalCount.level1}} / {{totalCount.level1Total}}</td><td>{{totalCount.level1}}%</td></tr>
+         <tr><td>Level 2:</td><td>{{totalCount.level2}} / {{totalCount.level2Total}}</td><td>{{totalCount.level2}}%</td></tr>
+         <tr><td>Level 3:</td><td>{{totalCount.level3}} / {{totalCount.level3Total}}</td><td>{{totalCount.level3}}%</td></tr>
+         <tr><td>Level 4:</td><td>{{totalCount.level4}} / {{totalCount.level4Total}}</td><td>{{totalCount.level4}}%</td></tr>
+         <tr><td>Level 5:</td><td>{{totalCount.level5}} / {{totalCount.level5Total}}</td><td>{{totalCount.level5}}%</td></tr>
+         <tr><td>Total:</td><td>{{totalCount.levelAll}} / {{totalCount.levelAllTotal}}</td><td>{{totalCount.levelAll}}%</td></tr>
+     </table>
+{% else %}
+    <p>Login to access statistics.</p> 
+{% endif %}
+ </div>
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>My Settings</h2>
+
+        <form method="post" action="/settings">
+        <table class="form">
+            <tr>
+                <td>Theme:</td>
+                <td>
+                    <input name="theme" type="radio" value="default" {% ifequal user.theme 'default' %}checked{% endifequal %}/> Sumi Black<br/>    
+                    <input name="theme" type="radio" value="blue" {% ifequal user.theme 'blue' %}checked{% endifequal %}/> Samurai Blue<br/>
+                    <input name="theme" type="radio" value="red" {% ifequal user.theme 'red' %}checked{% endifequal %}/> Ume Red<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Hide Preview:</td>
+                <td>
+                    <input name="hidePreview" type="radio" value="False" {% if not user.hidePreview %}checked{% endif %}/> Show<br/>
+                    <input name="hidePreview" type="radio" value="True" {% if user.hidePreview %}checked{% endif %}/> Hide<br/>    
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save"/>    
+                </td>    
+            </tr>
+            </table>
+        </form>
+        <p>
+            <a href="/">&larr; Back</a>
+        </p>
+{% endblock %}
+
+

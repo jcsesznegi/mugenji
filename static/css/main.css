@@ -1,0 +1,74 @@
+body,fieldset,legend,ul,ol,li,abbr,acronym,q,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,p,blockquote,address,caption,cite,code,dfn,em,strong,var {font-weight:normal; margin: 0px;padding: 0px;}
+body {padding:7px; background-color:black; color:white; font:14px arial;}
+table tr td, table tr th {font-size:14px;}
+ul {margin:0px; padding:0px;}
+button:hover {cursor:pointer;}
+#doc {margin:auto; position:relative; text-align:left; width:1000px; z-index:1;}
+#header {margin:auto; position:relative; width:1000px; height:80px;}
+div.catch { float:left; clear:both; width:100%; height:100px; margin:10px 0px 10px 0px;}
+div.catch_closed {height:20px !important;}
+div.catch button {float:right}
+div.catch0 {background-color:transparent;}
+div.catch1 {background-color:#333;}
+div.catch2 {background-color:#666;}
+div.catch3 {background-color:#999;}
+div.catch4 {background-color:#ccc;}
+div.logo {float:left; margin:0px 10px 0px 0px;}
+img.logo {border:0px;}
+div.greeting {float:left; height:60px; margin:0px 10px 0px 0px; line-height:60px;}
+div.navigation {float:right; height:60px; margin:0px 10px 0px 0px; line-height:60px;}
+div.content {float:left; clear:both; width:100%; min-height:550px; _height:550px; margin:0px 0px 10px 0px;}
+div.content_main {float:left; width:660px; margin:0px 10px 10px 0px;}
+div.content_wrapper {}
+div.content_sub {float:left; width:320px; height:100%; margin:0px 0px 10px 0px;}
+div.card {float:left; width:640px; margin:0px 0px 1px 0px; padding:0px 10px 0px 10px; border:1px solid white;}
+div.card_closed {border:1px solid #666;}
+div.card_top {float:left; height:30px; line-height:30px; width:100%}
+div.card_top span {float:left;}
+div.card_top button {float:right; margin-top:4px;}
+div.card_top_closed {color:#666;}
+div.card_kanji {float:left; width:150px; height:120px; margin:0px 10px 0px 0px; background-color:white; color:black; line-height:120px; font-size:110px; text-align:center;}
+div.card_content {float:left; margin-bottom:10px;}
+div.card_content_closed {display:none;}
+div.card_attributes {float:left; width:480px; height:120px; margin:0px 0px 0px 0px; background-color:white; color:black;}
+div.card_attributes ul.v {margin:10px 0px 0px 10px;}
+div.card_attributes ul.v li {clear:both; float:left; list-style-type:none; margin-bottom:3px;}
+div.card_attributes ul.h li {clear:none; display:inline; float:left; list-style-type:none; margin:0px;}
+div.card_attributes ul.h li:first-child {width:100px;}
+div.card_attributes ul.h li:last-child {font-weight:bold; width:350px;}
+li.card_attributes {list-style-type:none; line-height:25px;}
+li.card_attributes_values {list-style-type:none; line-height:25px; font-size:150%;}
+#footer {width:1000px; position:relative; margin:auto; text-align:center;}
+button.cycleKanji {margin-top:7px;}
+button.cycleLeft {float:left;}
+button.cycleRight {float: right;}
+
+/* User Stats */
+div.user_stats {margin-left:10px;}
+div.user_stats h2 {font-size:110%; font-weight:bold; margin-bottom:10px;}
+table.user_stats {border-collapse:collapse; border:1px solid #fff; width:300px;}
+table.user_stats tr td, table.user_stats tr th {border:1px solid #fff; height:20px; line-height:20px; padding: 5px 5px;}
+table.user_stats tr th {background-color:#fff; color:#000; text-align:center;}
+table.user_stats tr td {text-align:center; width:90px;}
+table.user_stats tr td:first-child {text-align:right; width:90px;}
+
+
+
+/* Forms */
+table.form {margin:0px auto; min-width:500px;}
+table.form tr td {height:20px; line-height:20px; padding-bottom:7px;}
+table.form tr td:first-child {padding-right:20px; text-align:right; width:35%; vertical-align:top;}
+
+
+
+/* Admin */
+table.admin {width:90%; margin:auto;}
+table.admin tr {text-align: center;}
+table.admin tr:hover {background-color:#333;}
+table.admin th {border-bottom:1px solid white;}
+
+
+
+
+
+

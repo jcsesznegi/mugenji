@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Administration > Kanji > {{kanji.kanji}}</h2>
+    <div>
+        <ul>
+            <li>Kanji: {{kanji.kanji}}</li>
+            <li>Meaning: {{kanji.meaning}}</li>
+            <li>Strokes: {{kanji.strokes}}</li>
+        </ul>
+    </div>
+    <div>
+        <a href="/admin/admin">&larr; Back</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% block header %}
+    {% include "../partial/header.html" %}
+{% endblock %}
+<div id="doc">
+    {% block content %}
+        {% for kanji in kanjis %}
+            <div>
+                <ul>
+                    <li>Kanji: {{kanji.kanji}}</li>
+                    <li>Meaning: {{kanji.meaning}}</li>
+                    <li>Strokes: {{kanji.strokes}}</li>
+                </ul>
+            </div>
+        {% endfor %}
+        <div>
+            <a href="/kanji/insert.html">Add more kanji.</a>
+        </div>
+    {% endblock %}
+</div>
+{% block footer %}
+    {% include "../partial/footer.html" %}
+{% endblock %}

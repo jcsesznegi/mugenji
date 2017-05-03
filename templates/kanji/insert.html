@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Administration > Add Kanji</h2>
+    <p>
+        Enter the kanji information.
+    </p>
+        <div>
+            <form method="POST" action="/kanji/insert">
+                <table>
+                    {{kanjiForm.as_table}}
+                </table>
+                <input type="submit" value="Add Kanji">
+            </form>
+        </div>
+        <p>
+            <a href="/admin/admin">&larr; Back</a>
+        </p>
+{% endblock %}
+

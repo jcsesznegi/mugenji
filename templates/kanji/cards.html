@@ -1,0 +1,23 @@
+{% if kanjiList %}
+    {% for kanji in kanjiList %}
+    <div class="card {% if kanji.hasKanji %}card_closed{% endif %}" id="card_{{kanji.key}}"> 
+            <div class="card_top {% if kanji.hasKanji %}card_top_closed{% endif %}" id="card_top_{{kanji.key}}">
+                <span>{{kanji.kanji}}</span>
+                {% if isLoggedIn %} {% if kanji.hasKanji %}<button onclick="userDeleteKanji('{{kanji.key}}');">X</button>{% else %}<button onclick="userAddKanji('{{kanji.key}}');">X</button>{% endif %}{% endif %}
+            </div>
+            <div class="card_content {% if kanji.hasKanji %}card_content_closed{% endif %}" id="card_content_{{kanji.key}}">
+		    <div class="card_kanji">{{kanji.kanji}}</div> 
+		    <div class="card_attributes">
+			    <ul class="v">
+				<li><ul class="h"><li>On-Yomi:</li><li>{{kanji.onYomi}}</li></ul></li>
+				<li><ul class="h"><li>Kun-Yomi:</li><li>{{kanji.kunYomi}}</li></ul></li>
+				<li><ul class="h"><li>Strokes:</li><li>{{kanji.strokes}}</li></ul></li>
+				<li><ul class="h"><li>Meaning:</li><li>{{kanji.meaning}}</li></ul></li>
+			    </ul>
+		    </div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>There are no kanji for this level yet.</p>
+{% endif %}
